@@ -1,8 +1,8 @@
 <?php
-class Category {
+class User {
   public static function getAll() {
     global $pdo;
-    $stmt = $pdo->query('SELECT * FROM categories');
+    $stmt = $pdo->query('SELECT * FROM users');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 }

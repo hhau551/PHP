@@ -1,8 +1,8 @@
 <?php
-require_once('../app/models/Category.php');
+require_once('../app/models/User.php');
 
 class HomeController {
   public function index() {
-    $categories = Category::getAll();
+    require_once('../app/views/home.php');
   }
 }
