@@ -1,5 +1,5 @@
 <?php
-    include_once('../app/views/shares/layout.php')
+    include_once('../app/views/shares/header.php')
 ?>
 <!-- Start Banner Area -->
 <section class="banner-area organic-breadcrumb">
@@ -34,7 +34,16 @@
                 
                     <div class="col-md-7 col-lg-6 ml-auto register_box_form">
                         <h3 class="text-center">Đăng ký</h3>
-                        <form action="?route=register" method="post">
+                        
+                        <p class="text-danger">
+                            
+                            <?php
+                                if(isset($_SESSION['Error'])){
+                                    echo "Loi: <br/>".$_SESSION['Error'];
+                                }
+                            ?>
+                        </p>
+                        <form action="?route=register" method="post" enctype="multipart/form-data">
                             <!-- <div asp-validation-summary="ModelOnly" class="text-danger"></div> -->
                             <div class="row">
                                 <!-- Full Name -->
@@ -47,8 +56,8 @@
                                 </div>
                                 <div class="form-group custom-select-register col-lg-6 mb-4">
                                     <select class="form-select form-control" id="Gender" name="Gender">
-                                        <option value="true">Nam</option>
-                                        <option value="false">Nữ</option>
+                                        <option value="Male">Nam</option>
+                                        <option value="Female">Nữ</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-lg-6 mb-4">
@@ -68,6 +77,10 @@
                                 <div class="form-group col-lg-12 mb-4">
                                     <textarea id="Adress" name="Adress" placeholder="Nhập địa chỉ"
                                               class="form-control form-control-address" rows="5" required></textarea>
+                                </div>
+                                <div class="form-group col-lg-12 mb-4">
+                                    <input id="ImgUSer" name="ImgUSer" type="file" placeholder="ImgUser"
+                                           class="form-control" required>
                                 </div>
                                 <!-- Password -->
                                 <div class="form-group col-lg-6 mb-4">
@@ -103,3 +116,6 @@
     </div>
 </section>
 <!--================End Register Box Area =================-->
+<?php
+    include_once('../app/views/shares/footer.php')
+?>

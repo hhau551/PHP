@@ -1,5 +1,5 @@
 <?php
-    include_once('../app/views/shares/layout.php')
+    include_once('../app/views/shares/header.php')
 ?>
 
 <!-- Start Banner Area -->
@@ -15,7 +15,7 @@
     <div class="container">
         <nav aria-label="breadcrumb ">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="?route=/">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="?">Trang chủ</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
             </ol>
         </nav>
