@@ -1620,7 +1620,7 @@ h6 {
 ============================================================================================ */
     .banner-area {
         /* background: url(~/images/banner/banner-bg.png) center no-repeat;*/
-        background-image: url('@Url.Content("~/images/banner/banner-bg.png")');
+        background-image: url('@Url.Content("../root/images/banner/banner-bg.png")');
         background-size: cover;
         position: relative;
     }
