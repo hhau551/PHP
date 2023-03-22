@@ -4,6 +4,18 @@ $routes = [
     'controller' => 'HomeController',
     'action' => 'index'
   ],
+  'blog' => [
+    'controller' => 'HomeController',
+    'action' => 'blog'
+  ],
+  'contact' => [
+    'controller' => 'HomeController',
+    'action' => 'contact'
+  ],
+  'flash-sale' => [
+    'controller' => 'HomeController',
+    'action' => 'flashSale'
+  ],
   'brand' => [
     'controller' => 'BrandController',
     'action' => 'showBrand'
@@ -23,5 +35,13 @@ $routes = [
   'forgot-password' => [
     'controller' => 'AccountController',
     'action' => 'forgotPassword'
+  ],
+  'info-menu' => [
+    'controller' => 'HomeController',
+    'action' => 'infoMenu'
+  ],
+  'edit-info' => [
+    'controller' => 'AccountController',
+    'action' => 'editInfo'
   ]
 ];
