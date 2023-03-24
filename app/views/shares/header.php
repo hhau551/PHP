@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopGiay</title>
+    <title>Trang chủ</title>
     <link rel="shortcut icon" href="../root/images/fav.png">
     <!-- Boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -57,14 +57,15 @@
                             </button>
                         </li>
                         <li class="nav-item submenu submenu-user dropdown">
-                            <a href="#" class="user nav-link-right dropdown-toggle" data-toggle="dropdown"
+                        <a href="#" class="user nav-link-right dropdown-toggle" data-toggle="dropdown"
                                role="button" aria-haspopup="true" aria-expanded="false">
                                <?php
-                                session_start();
-                                if (isset($_SESSION['ImgUser'])) 
+                                session_start();                          
+
+                                if (isset($_SESSION['UserId'])) 
                                 {
-                                    $avatar=$_SESSION['ImgUser'] ?? "12.png";                      
-                                    echo "<li> <span><img width='45px' src='../root/images/avatar/".$avatar."' /></span> </li>";
+                                    $avatar=$_SESSION['ImgUser'] ?? "avatar.png";                       
+                                    echo "<span class=\"img-user\"> <img width='45px' src='../root/images/avatar/".$avatar."' /></span>";
                                 }
                                 else {?>
                                     <span class="img-non-user">
@@ -74,14 +75,14 @@
                                 ?>
                             </a>
                             <ul class="dropdown-menu">
-                            <?php
-                                                        
-                                if(isset($_SESSION['UserID']))
+                            <?php                       
+                                if(isset($_SESSION['UserId']))
                                 {?>
-                                    <li class="nav-item"><a class="nav-link btn-information" href="?route=login">Thông tin cá nhân</a></li>
+                                    
+                                    <li class="nav-item"><a class="nav-link btn-information" href="?route=info-menu">Thông tin cá nhân</a></li>
                                     <li class="nav-item"><a class="nav-link" href="?route=register" >Lịch sử đơn hàng</a></li>
                                     <?php
-                                      include_once('../app/views/home/logout.php');                        
+                                      include_once('../app/views/home/logout.php');                   
                                 } 
                                 else
                                 { ?> 
@@ -100,19 +101,19 @@
                     <div class="collapse navbar-collapse offset nav-menu-hover" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link nav-link-hover" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                                <a class="nav-link nav-link-hover" href="?" >Trang chủ</a>
                             </li>
                             <li class="nav-item submenu">
                                 <a class="nav-link nav-link-hover" asp-controller="Home" asp-action="Products">Sản phẩm</a>
                             </li>
                             <li class="nav-item submenu">
-                                <a class="nav-link nav-link-hover" href="?route=login">Tin tức</a>
+                                <a class="nav-link nav-link-hover" href="?route=blog">Tin tức</a>
                             </li>
                             <li class="nav-item submenu">
-                                <a class="nav-link nav-link-hover" asp-controller="Home" asp-action="FlashSale">Flash Sale</a>
+                                <a class="nav-link nav-link-hover" href="?route=flash-sale">Flash Sale</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link nav-link-hover" href="../app/views/home/contact.php">Liên hệ</a>
+                                <a class="nav-link nav-link-hover" href="?route=contact">Liên hệ</a>
                             </li>
                             
                         </ul>
