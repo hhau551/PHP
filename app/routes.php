@@ -16,10 +16,6 @@ $routes = [
     'controller' => 'HomeController',
     'action' => 'flashSale'
   ],
-  'brand' => [
-    'controller' => 'BrandController',
-    'action' => 'showBrand'
-  ],
   'register' => [
     'controller' => 'AccountController',
     'action' => 'register'
