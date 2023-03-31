@@ -55,9 +55,17 @@ $routes = [
   'delete-size' => [
     'controller' => 'SizeController',
     'action' => 'deleteSize'
+  ]  ,
+  'product' => [
+    'controller' => 'ProductController',
+    'action' => 'index'
   ],
   'danh-sach-product' => [
     'controller' => 'ProductController',
     'action' => 'showProduct'
+  ],
+  'create-product' => [
+    'controller' => 'ProductController',
+    'action' => 'createProduct'
   ]
 ];
