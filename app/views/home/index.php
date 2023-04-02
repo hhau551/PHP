@@ -1,5 +1,5 @@
 <?php
-    include_once('../app/views/shares/layout.php')
+    include_once('../app/views/shares/header.php')
 ?>
 
 <section class="banner-area">
@@ -519,3 +519,7 @@
         }, 500);
     }
 </script>
+
+<?php
+    include_once('../app/views/shares/footer.php')
+?>
