@@ -6,6 +6,14 @@ class Brand {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public static function find($brandid) {
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM brands WHERE BrandID =:brandid');
+    $stmt->bindParam(':brandid', $brandid);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
   public static function create($brandname) {
     global $pdo;
     

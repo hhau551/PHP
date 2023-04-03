@@ -5,7 +5,6 @@ class BrandController {
         require_once('../app/views/brands/create.php');
     }
 
-    // hien thi danh sach Brand
     public function showBrand() {
         $danhSachBrand = Brand::getAll();
         require_once('../app/views/brands/index.php');
@@ -17,12 +16,25 @@ class BrandController {
 
         $isSuccess = Brand::create($brandname);
         if($isSuccess)        
-            // Redirect to homepage
             header('Location: ?route=danh-sach-brand');
         else
             header('Location: ?route=failure');
         exit;
 
+    }
+    function editBrand(){
+        $brandid = $_GET['brandid'];
+        if(isset($brandid)){
+            $brand = Brand::find($brandid);
+            if(empty($brand)){
+                header('Location: ?route=not-found');
+                exit;
+            }
+            require_once('../app/views/brands/edit.php');
+        }else{
+            header('Location: ?route=not-found');
+            exit;
+        }       
     }
 
     function deleteBrand(){
@@ -31,7 +43,6 @@ class BrandController {
 
         $isSuccess = Brand::delete($brandid);
         if($isSuccess)        
-            // Redirect to homepage
             header('Location: ?route=danh-sach-brand');
         else 
             header('Location: ?route=failure');

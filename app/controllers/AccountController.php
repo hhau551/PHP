@@ -112,9 +112,6 @@ class AccountController {
             $isSuccess = User::create($userName, $fullName, $gender, $phoneNumber, $email, $address, $hashPass);
             if($isSuccess)
             {
-                // Redirect to homepage
-                // $_SESSION['UserId'] ="";
-                // $_SESSION['FullName'] ="Loi tao tai khoan";
                 header('Location: ?route=login');
             }      
                 
@@ -212,14 +209,11 @@ class AccountController {
             // if everything is ok, try to upload file
         } else {
         if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-            // echo "The file ". htmlspecialchars( basename( $_FILES["avatar"]["name"])). " has been uploaded.";
             return 1;
         } else {
-            // echo "Sorry, there was an error uploading your file.";
             return 0;
             }
         }
-
     }
 
     public function forgotPassword() {
