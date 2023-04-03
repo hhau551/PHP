@@ -68,10 +68,6 @@ class AccountController {
                 $isSuccess = password_verify($pass, $user['Password']);
                 if($isSuccess && $user['Role'] == "Admin")
                 {
-                    
-                        $_SESSION['UserId'] = $user['UserID'];
-                        $_SESSION['FullName'] = $user['FullName'];
-                        $_SESSION['ImgUser'] = $user['ImgUser'];
                         header('Location: ?route=index');
 
                 }      

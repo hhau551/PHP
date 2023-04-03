@@ -39,5 +39,21 @@ $routes = [
   'edit-info' => [
     'controller' => 'AccountController',
     'action' => 'editInfo'
-  ]
+  ],
+  'product' => [
+    'controller' => 'HomeController',
+    'action' => 'indexProduct'
+  ],
+  'detail' => [
+    'controller' => 'HomeController',
+    'action' => 'detail'
+  ],
+  'add-cart' => [
+    'controller' => 'ProductController',
+    'action' => 'addCart'
+  ],
+  'view-cart' => [
+    'controller' => 'ProductController',
+    'action' => 'viewCart'
+  ],
 ];

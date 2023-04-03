@@ -8,6 +8,10 @@ $routes = [
     'controller' => 'HomeController',
     'action' => 'indexAdmin'
   ],
+  'user' => [
+    'controller' => 'AccountController',
+    'action' => 'showUser'
+  ],
   'brand' => [
     'controller' => 'BrandController',
     'action' => 'index'
@@ -19,6 +23,10 @@ $routes = [
   'create-brand' => [
     'controller' => 'BrandController',
     'action' => 'createBrand'
+  ],
+  'edit-brand' => [
+    'controller' => 'BrandController',
+    'action' => 'editBrand'
   ],
   'delete-brand' => [
     'controller' => 'BrandController',
@@ -36,6 +44,10 @@ $routes = [
     'controller' => 'ColorController',
     'action' => 'createColor'
   ],
+  'edit-color' => [
+    'controller' => 'ColorController',
+    'action' => 'editColor'
+  ],
   'delete-color' => [
     'controller' => 'ColorController',
     'action' => 'deleteColor'
@@ -52,6 +64,10 @@ $routes = [
     'controller' => 'SizeController',
     'action' => 'createSize'
   ],
+  'edit-size' => [
+    'controller' => 'SizeController',
+    'action' => 'editSize'
+  ],
   'delete-size' => [
     'controller' => 'SizeController',
     'action' => 'deleteSize'
@@ -67,5 +83,13 @@ $routes = [
   'create-product' => [
     'controller' => 'ProductController',
     'action' => 'createProduct'
+  ],
+  'edit-product' => [
+    'controller' => 'ProductController',
+    'action' => 'editProduct'
+  ],
+  'delete-product' => [
+    'controller' => 'ProductController',
+    'action' => 'deleteProduct'
   ]
 ];

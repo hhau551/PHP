@@ -191,11 +191,6 @@
                         <i class='bx bx-sort text-white'></i>
                     </a>
                 </div>
-                <div class="sorting mr-auto">
-                </div>
-                <div class="pagin-right pagination mt-2">
-                    @Html.PagedListPager(Model, page => Url.Action("FlashSale", new { page }))
-                </div>
             </div>
             <!-- End Filter Bar -->
             <!-- Start Best Seller -->
@@ -270,24 +265,6 @@
                 </div>
             </section>
             <!-- End Best Seller -->
-            <!-- Start Filter Bar -->
-            <div class="pagin-home filter-bar d-flex flex-wrap align-items-center">
-                <div class="pagin-left sorting mr-auto">
-                    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
-                </div>
-                <div class="pagin-right pagination">
-                    @Html.PagedListPager(Model, page => Url.Action("FlashSale",
-                        new
-                        {
-                            page,
-                            sortOrder = ViewBag.SortOrder,
-                            currentFilterSearch = ViewBag.CurrentFilterSearch,
-                            currentFilterBrand = ViewBag.CurrentFilterBrand,
-                            currentFilterSize = ViewBag.CurrentFilterSize,
-                            currentFilterColor = ViewBag.CurrentFilterColor
-                        }))
-                </div>
-            </div>
             <!-- End Filter Bar -->
         </div>
     </div>

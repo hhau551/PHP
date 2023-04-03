@@ -145,42 +145,13 @@
                                     <a asp-controller="Sizes" asp-action="Index">Bảng Size</a>
                                 </li>
                                 <li>
-                                    <a href="?route=brand" >Thương Hiệu</a>
+                                    <a href="?route=danh-sach-brand" >Thương Hiệu</a>
                                 </li>
                             </ul>
-                        </li>
-                            <li>
-                                <a class="show-cat-btn1" href="#">
-                                    <span class="icon bx bxs-report bx-sm" aria-hidden="true"></span>Thống Kê, Báo Cáo
-                                    <span class="category__btn1 transparent-btn" title="Open list">
-                                        <span class="icon bx bxs-down-arrow" aria-hidden="true"></span>
-                                    </span>
-                                </a>
-                                <ul class="cat-sub-menu">
-                                    <li>
-                                        <a asp-controller="Chart" asp-action="Index">Thống Kê (Năm)</a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Chart" asp-action="ChartWeek">Thống Kê (Tháng)</a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="Report" asp-action="Index">Báo Cáo</a>
-                                    </li>
-                                </ul>
                             </li>
                         <li>
                             <a asp-controller="Discount" asp-action="Index">
                                 <span class="icon bx bxs-discount bx-sm" aria-hidden="true"></span>Mã giảm giá
-                            </a>
-                        </li>
-                            <li>
-                                <a asp-controller="User" asp-action="Index">
-                                    <span class="icon bx bxs-user-account bx-sm" aria-hidden="true"></span>Quản lý tài khoản
-                                </a>
-                            </li>
-                        <li>
-                            <a asp-controller="User" asp-action="BotChat">
-                                <span class="icon bx bxs-bot bx-sm" aria-hidden="true"></span><span class="ml-1">BOT chat</span>
                             </a>
                         </li>
                     </ul>

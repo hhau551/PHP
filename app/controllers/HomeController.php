@@ -20,8 +20,6 @@ class HomeController {
     require_once('../app/views/home/flashSale.php');
   }
 
-  
-
   public function infoMenu() {
     require_once('../app/views/home/infoMenu.php');
   }
