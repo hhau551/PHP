@@ -5,6 +5,11 @@ class AccountController {
         require_once('../app/views/admin/index.php');
     }
 
+    public function showUser() {
+        $danhSachUser = User::getAll();
+        require_once('../app/views/user/index.php');
+    }
+
     public function logout() {
         session_start();
         unset($_SESSION['UserId']);
@@ -32,6 +37,10 @@ class AccountController {
                 {
                     $_SESSION['UserId'] = $user['UserID'];
                     $_SESSION['ImgUser'] = $user['ImgUser'];
+                    $_SESSION['FullName'] = $user['FullName'];
+                    $_SESSION['Email'] = $user['Email'];
+                    $_SESSION['PhoneNumber'] = $user['PhoneNumber'];
+                    $_SESSION['Address'] = $user['Address'];
                     header('Location: ?');
                 }      
                     
@@ -98,7 +107,7 @@ class AccountController {
             $phoneNumber = $_POST['PhoneNumber'];
             $email = $_POST['Email'];
             $address = $_POST['Address'];
-            
+            $dob = $_POST['DOB'];
             $pass = $_POST['Password'];
             $confirmPass = $_POST['ConfirmPassword'];
 
@@ -109,7 +118,7 @@ class AccountController {
                 exit;
             }
             $hashPass = password_hash($pass, PASSWORD_BCRYPT);
-            $isSuccess = User::create($userName, $fullName, $gender, $phoneNumber, $email, $address, $hashPass);
+            $isSuccess = User::create($userName, $fullName, $gender, $phoneNumber, $email, $address, $dob, $hashPass);
             if($isSuccess)
             {
                 header('Location: ?route=login');
