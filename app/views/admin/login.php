@@ -24,14 +24,14 @@
             <div class="login-content" ng-app="">
                 <form action="?" method="post" name="personForm">
                     <h2 class="title">ĐĂNG NHẬP</h2>
-                    <input type="hidden" asp-for="ReturnUrl" />
-                    <div class="text-danger" asp-validation-summary="All"></div>
+                    <input type="hidden" for="ReturnUrl" />
+                    <div class="text-danger" validation-summary="All"></div>
                     <div class="input-div one">
                         <div class="i">
                             <i class='bx bxs-user bx-sm'></i>
                         </div>
                         <div class="div">
-                            <input name="UserName" required type="text" asp-for="UserName" class="input" placeholder="Username" />
+                            <input name="UserName" required type="text" for="UserName" class="input" placeholder="Username" />
                         </div>
                     </div>
                     <div class="input-div pass">
@@ -39,10 +39,10 @@
                             <i class='bx bxs-lock-alt bx-sm'></i>
                         </div>
                         <div class="div">
-                            <input name="Password" required type="password" asp-for="Password" class="input" placeholder="Password">
+                            <input name="Password" required type="password" for="Password" class="input" placeholder="Password">
                         </div>
                     </div>
-                    <a asp-action="ForgotPassword">Quên mật khẩu?</a>
+                    <a action="ForgotPassword">Quên mật khẩu?</a>
                     <input type="submit" class="btn" value="Đăng nhập">
                 </form>
             </div>

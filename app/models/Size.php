@@ -5,7 +5,15 @@ class Size {
     $stmt = $pdo->query('SELECT * FROM sizes');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
-  //tao phieu dang ky
+
+  public static function find($sizeid) {
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM sizes WHERE SizeID =:sizeid');
+    $stmt->bindParam(':sizeid', $sizeid);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
   public static function create($size) {
     global $pdo;
     
