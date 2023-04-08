@@ -44,20 +44,18 @@
                             ?>
                         </p>
                         <form action="?route=register" method="post" enctype="multipart/form-data">
-                            <!-- <div asp-validation-summary="ModelOnly" class="text-danger"></div> -->
                             <div class="row">
                                 <!-- Full Name -->
                                 <div class="form-group col-lg-6 mb-4">
                                     <input type="text" class="form-control" id="UserName" name="UserName" placeholder="Tên đăng nhập" required>
-                                    <!-- <span asp-validation-for="UserName" class="text-danger"></span> -->
                                 </div>
                                 <div class="form-group col-lg-6 mb-4">
                                     <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Họ và tên"  required>
                                 </div>
                                 <div class="form-group custom-select-register col-lg-6 mb-4">
                                     <select class="form-select form-control" id="Gender" name="Gender">
-                                        <option value="Male">Nam</option>
-                                        <option value="Female">Nữ</option>
+                                        <option value="0">Nam</option>
+                                        <option value="1">Nữ</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-lg-6 mb-4">
@@ -75,16 +73,12 @@
                                            class="form-control" required>
                                 </div>
                                 <div class="form-group col-lg-12 mb-4">
-                                    <textarea id="Adress" name="Adress" placeholder="Nhập địa chỉ"
+                                    <textarea id="Address" name="Address" placeholder="Nhập địa chỉ"
                                               class="form-control form-control-address" rows="5" required></textarea>
-                                </div>
-                                <div class="form-group col-lg-12 mb-4">
-                                    <input id="ImgUSer" name="ImgUSer" type="file" placeholder="ImgUser"
-                                           class="form-control" required>
                                 </div>
                                 <!-- Password -->
                                 <div class="form-group col-lg-6 mb-4">
-                                    <input type="password" id="Pass" name="Pass" placeholder="Mật khẩu"
+                                    <input type="password" id="Password" name="Password" placeholder="Mật khẩu"
                                            class="form-control" required>
                                 </div>
                                 <!-- Password Confirmation -->

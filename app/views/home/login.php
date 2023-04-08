@@ -41,7 +41,7 @@
                                    placeholder="Tên đăng nhập" required>
                         </div>
                         <div class="col-md-12 form-group">
-                            <input type="password" id="Pass" name="Pass" class="form-control"
+                            <input type="password" id="Password" name="Password" class="form-control"
                                    placeholder="Mật khẩu" required>
                         </div>
                         <div class="col-md-12 form-group">

@@ -46,9 +46,10 @@
 
                     <ul class="social-media order-lg-last nav navbar-right nav-center">
                         <li class="nav-item submenu dropdown">
-                            <!-- <a>
-                                @await Html.PartialAsync("_CartPartial")
-                            </a> -->
+                            <a href="?route=view-cart">
+                                <span class="bx bx-shopping-bag bx-sm">
+                                </span>
+                            </a>
                         </li>
                         <li class="nav-item submenu dropdown d-flex">
                             <button class="search">
@@ -104,7 +105,7 @@
                                 <a class="nav-link nav-link-hover" href="?" >Trang chủ</a>
                             </li>
                             <li class="nav-item submenu">
-                                <a class="nav-link nav-link-hover" asp-controller="Home" asp-action="Products">Sản phẩm</a>
+                                <a class="nav-link nav-link-hover" href="?route=product">Sản phẩm</a>
                             </li>
                             <li class="nav-item submenu">
                                 <a class="nav-link nav-link-hover" href="?route=blog">Tin tức</a>
@@ -124,7 +125,7 @@
         </div>
         <div class="search_input" id="search_input_box">
             <div class="container">
-                <form class="d-flex justify-content-between search-text" asp-controller="Home" asp-action="Products" method="get">
+                <form class="d-flex justify-content-between search-text" controller="Home" action="Products" method="get">
                     <input type="text" id="searchString" name="SearchString" class="form-control" chass="searchstring_input" placeholder="Tìm kiếm">
                     <button type="submit" class="btn"></button>
                     <span class="bx bx-x btn-search" id="close_search" title="Close Search"></span>

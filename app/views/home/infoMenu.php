@@ -47,11 +47,11 @@ include_once('../app/views/shares/header.php');
 
                     <ul class="nav flex-column infomation-user-left-nav">
                         <li class="nav-link">
-                            <a asp-controller="Home" asp-action="InfoMenu" class="nav-info-active">Tài khoản</a>
+                            <a controller="Home" action="InfoMenu" class="nav-info-active">Tài khoản</a>
                             <!-- empty -->
                         </li>
                         <li class="nav-link">
-                            <a asp-controller="Home" asp-action="Info">Thông tin</a>
+                            <a controller="Home" action="Info">Thông tin</a>
                         </li>
                         <li class="nav-link">
                             <a href="">Đơn hàng</a>
@@ -60,7 +60,7 @@ include_once('../app/views/shares/header.php');
                             <a href="">Địa chỉ</a>
                         </li>
                         <li class="nav-link">
-                            <a asp-controller="Home" asp-action="ChangePass">Đổi mật khẩu</a>
+                            <a controller="Home" action="ChangePass">Đổi mật khẩu</a>
                         </li>
 
                     </ul>

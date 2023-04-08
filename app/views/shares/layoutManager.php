@@ -97,7 +97,7 @@
         <aside class="sidebar">
             <div class="sidebar-start">
                 <div class="sidebar-head d-flex justify-content-center">
-                    <a asp-controller="Admin" asp-action="Index" class="logo-wrapper" title="Home">
+                    <a controller="Admin" action="Index" class="logo-wrapper" title="Home">
                         <span class="sr-only">Home</span>
                         <img class="icon" src="../root/images/avatar/Logoteam.png" />
                         <div class="logo-text">
@@ -113,17 +113,17 @@
                 <div id="myDIV" class="sidebar-body">
                     <ul class="sidebar-body-menu">
                         <li>
-                            <a class="dashboard-menu" asp-controller="Admin" asp-action="Index">
+                            <a class="dashboard-menu" href="?route=index">
                                 <span class="icon bx bx-home-alt bx-sm" aria-hidden="true"></span>Trang Chủ
                             </a>
                         </li>
                         <li>
-                            <a class="dashboard-menu" asp-controller="Orders" asp-action="Index">
+                            <a class="dashboard-menu" href="?route=order">
                                 <span class="icon bx bx-shopping-bag bx-sm" aria-hidden="true"></span>Đơn Hàng
                             </a>
                         </li>
                         <li>
-                            <a class="dashboard-menu" asp-controller="UserMem" asp-action="Index">
+                            <a class="dashboard-menu" href="?route=user">
                                 <span class="icon bx bx-user bx-sm" aria-hidden="true"></span>Khách Hàng
                             </a>
                         </li>
@@ -136,23 +136,18 @@
                             </a>
                             <ul class="cat-sub-menu">
                                 <li>
-                                    <a asp-controller="Product" asp-action="Index">Danh Sách</a>
+                                    <a href="?route=danh-sach-product">Danh Sách</a>
                                 </li>
                                 <li>
-                                    <a asp-controller="Colors" asp-action="Index">Bảng Màu</a>
+                                    <a href="?route=danh-sach-color">Bảng Màu</a>
                                 </li>
                                 <li>
-                                    <a asp-controller="Sizes" asp-action="Index">Bảng Size</a>
+                                    <a href="?route=danh-sach-size">Bảng Size</a>
                                 </li>
                                 <li>
                                     <a href="?route=danh-sach-brand" >Thương Hiệu</a>
                                 </li>
                             </ul>
-                            </li>
-                        <li>
-                            <a asp-controller="Discount" asp-action="Index">
-                                <span class="icon bx bxs-discount bx-sm" aria-hidden="true"></span>Mã giảm giá
-                            </a>
                         </li>
                     </ul>
                 </div>
@@ -193,7 +188,7 @@
                 </div>
             </nav>
             <!-- ! Main -->
-            @RenderBody()
+            <img class="" src="../root/images/background.jpg" alt="" />
         </div>
     </div>
     <!-- Chart library -->

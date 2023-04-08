@@ -6,6 +6,14 @@ class Product {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public static function find($productid) {
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM products WHERE ProductID =:productid');
+    $stmt->bindParam(':productid', $productid);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
   public static function create($ProductName, $Price, $Sale, $image, $BrandID, $SizeID, $ColorID, $Description) {
     global $pdo;
     
@@ -21,6 +29,18 @@ class Product {
     $stmt->bindParam(':SizeID', $SizeID);
     $stmt->bindParam(':ColorID', $ColorID);
     $stmt->bindParam(':Description', $Description);
+
+    return $stmt->execute();
+  }
+
+  public static function delete($productid) {
+    global $pdo;
+    
+    $sql = "DELETE FROM products WHERE ProductID= :productid";
+    $stmt = $pdo->prepare($sql);
+   
+
+    $stmt->bindParam(':productid', $productid);
 
     return $stmt->execute();
   }

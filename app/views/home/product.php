@@ -1,5 +1,7 @@
 <?php
-    include('../app/views/shares/header.php')
+
+  include_once('../app/views/shares/header.php');
+
 ?>
 
 <!-- Start Banner Area -->
@@ -16,8 +18,8 @@
     <div class="container">
         <nav aria-label="breadcrumb ">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="?">Trang chủ</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Flash Sale</li>
+                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
             </ol>
         </nav>
     </div>
@@ -31,7 +33,7 @@
                 <div class="top-filter-head">Danh mục</div>
                 <div class="common-filter">
                     <div class="head">Thương thiệu</div>
-                    <form action="/home/flashsale" method="get">
+                    <form>
                         <ul>
                             <li class="filter-list">
                                 <input class="pixel-radio" type="radio"
@@ -59,17 +61,18 @@
                                 <label>MLB</label>
                             </li>
                         </ul>
-                        <div class="d-flex justify-content-center mt-2">
+                        <div class="d-flex justify-content-center mt-4">
                             <button type="submit" value="Search" class="search-btn-product primary-btn d-flex">
                                 <i class='bx bx-search-alt'></i>
                             </button>
                         </div>
                     </form>
+
                 </div>
                 <div class="common-filter">
                     <div class="head">Chọn size</div>
 
-                    <form action="/home/flashsale" method="get">
+                    <form action="/home/products" method="get">
                         <div class="d-flex justify-content-around">
                             <ul>
                                 <li class="filter-list">
@@ -117,7 +120,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="d-flex justify-content-center mt-2">
+                        <div class="d-flex justify-content-center mt-4">
                             <button type="submit" value="Search" class="search-btn-product primary-btn d-flex">
                                 <i class='bx bx-search-alt'></i>
                             </button>
@@ -126,7 +129,7 @@
                 </div>
                 <div class="common-filter">
                     <div class="head">Màu sắc</div>
-                    <form action="/home/flashsale" method="get">
+                    <form action="/home/products" method="get">
                         <div class="d-flex justify-content-around">
                             <ul>
                                 <li class="filter-list">
@@ -173,7 +176,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="d-flex justify-content-center mt-2">
+                        <div class="d-flex justify-content-center mt-4">
                             <button type="submit" value="Search" class="search-btn-product primary-btn d-flex">
                                 <i class='bx bx-search-alt'></i>
                             </button>
@@ -191,6 +194,8 @@
                         <i class='bx bx-sort text-white'></i>
                     </a>
                 </div>
+                <div class="sorting mr-auto">
+                </div>
             </div>
             <!-- End Filter Bar -->
             <!-- Start Best Seller -->
@@ -198,62 +203,65 @@
                 <div class="row" data-aos="fade-up">
                     <!-- single product -->
                     <?php foreach ($danhSachProduct as $product) 
-                    {?>
-                                <div class="col-lg-4 col-md-6"  data-aos="fade-up">
-                                    <div class="single-product">
-                                        <a href="?route=detail&productId=<?= $product['ProductID']?>">
-                                            <div class="img-prd-animation">
-                                                <div class="img-fluid">
-                                                    <img class="" src="../root/images/Product/<?= $product['Image']?>" alt="">
-                                                    <?php if ($product['Sale'] > 0)
-                                                    {?>
-                                                        <div class="bagde-sale">
-                                                            <span class="badge-txt">Sale</span>
-                                                        </div>
-                                                    <?php } ?>
+                    { ?>
+                        <div class="col-lg-4 col-md-6"  data-aos="fade-up">
+                            <div class="single-product">
+                                <a  href="?route=detail&productid=<?= $product['ProductID']?>">
+                                    <div class="img-prd-animation">
+                                        <div class="img-fluid">
+                                        <?php        
+                                            $image=$product['Image'] ?? "image.png";   ?>                                         
+                                            <img class="" src="../root/images/Product/<?= $image ?>" alt="" />                                           
+                                            <?php
+                                            if ($product['Sale'] > 0)
+                                            { ?>
+                                                <div class="bagde-sale">
+                                                    <span class="badge-txt">Sale</span>
                                                 </div>
-                                            </div>
-                                        </a>
-                                        <div class="product-details mt-3">
-                                            <h6 class="custom-title-product">
-                                                <a class="text-decoration-none text-link-hover" href="?route=detail&productId=<?= $product['ProductID']?>">
-                                                   <?= $product['ProductName']?>
-                                                </a>
-                                            </h6>
-                                            <div class="price d-flex">
-                                                <?php if ($product['Sale'] > 0)
-                                                    {
-                                                        echo "<h6 class='d-flex'>".$product['Sale']." <span class='text-lowercase'></span> VNĐ</h6>";
-                                                        echo "<h6 class='d-flex l-through'>".$product['Price']."<span class='text-lowercase'></span></h6>";
-                                                    }
-                                                    else
-                                                    {
-                                                        echo "<h6 class='d-flex'>".$product['Price']." <span class='text-lowercase'></span> VNĐ</h6>";
-                                                    } ?>
-                                            </div>
-                                            <div class="prd-bottom">
-                                                <a class='addProduct social-info' href="javascript:addCart(<?= $product['ProductID'] ?>)">
-                                                    <span class='bx bx-basket'></span>
-                                                    <p class="hover-text">Giỏ hàng</p>
-                                                </a> 
-                                                <a href="?route=detail&productId=<?= $product['ProductID']?>" class="social-info">
-                                                    <span class='bx bx-move'></span>
-                                                    <p class="hover-text">Xem Thêm</p>
-                                                </a>
-                                                <a class="social-info">
-                                                    <span class='bx bx-share bx-rotate-180'></span>
-                                                    <p class="hover-text">Chia sẻ</p>
-                                                </a>
-                                            </div>
+                                            <?php } ?>
                                         </div>
                                     </div>
+                                </a>
+                                <div class="product-details mt-3">
+                                    <h6 class="custom-title-product">
+                                        <a class="text-decoration-none text-link-hover" href="?route=detail&productid=<?= $product['ProductID']?>">
+                                           <?= $product["ProductName"] ?>
+                                        </a>
+                                        
+                                    </h6>
+                                    <div class="price d-flex">
+                                        <?php if ($product['Sale'] > 0)
+                                        {
+                                            echo "<h6 class='d-flex'>".$product['Sale']." <span class='text-lowercase'></span> VNĐ</h6>";
+                                            echo "<h6 class='d-flex l-through'>".$product['Price']."<span class='text-lowercase'></span></h6>";
+                                        }
+                                        else
+                                        {
+                                            echo "<h6 class='d-flex'>".$product['Price']." <span class='text-lowercase'></span> VNĐ</h6>";
+                                        } ?>
+                                    </div>
+                                    <div class="prd-bottom">
+                                            <a class='addProduct social-info' href="?route=add-cart&productid=<?= $product['ProductID'] ?>">
+                                                <span class='bx bx-basket'></span>
+                                                <p class="hover-text">Giỏ hàng</p>
+                                            </a>                            
+                                        <a href="?route=detail&productId=<?= $product['ProductID']?>" class="social-info">
+                                            <span class='bx bx-move'></span>
+                                            <p class="hover-text">Xem Thêm</p>
+                                        </a>
+                                        <a class="social-info">
+                                            <span class='bx bx-share bx-rotate-180'></span>
+                                            <p class="hover-text">Chia sẻ</p>
+                                        </a>
+                                    </div>
                                 </div>
-                            <?php } ?>
+                            </div>
+                        </div>
+                    <?php } ?>
                     <!-- single product -->
                 </div>
             </section>
             <!-- End Best Seller -->
-            <!-- End Filter Bar -->
         </div>
     </div>
 </div>
@@ -267,7 +275,7 @@
         $("#imgBusy_" + id).show();
         setTimeout(function () {
             $.ajax({
-                url: "/Home/AddCart",
+                url: "?route=add-cart",
                 type: "Post",
                 data: {
                     id: id,
@@ -300,6 +308,3 @@
         }, 500);
     }
 </script>
-<?php
-    include('../app/views/shares/footer.php')
-?>

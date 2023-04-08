@@ -24,7 +24,7 @@
                                             Yeezy Boost 350 V2 Ash Blue là một trong số các phối màu Yeezy Boost 350 V2 hoàn toàn mới vừa được tiết lộ bởi nguồn uy tín Yeezy Mafia.
                                         </p>
                                         <div class="top-down trans-delay-0-6 d-flex align-items-center">
-                                            <a href="#" class="btn-icon"> <i class='bx bx-expand-alt bx-sm'></i></a>
+                                            <a href="?route=product" class="btn-icon"> <i class='bx bx-expand-alt bx-sm'></i></a>
                                             <span class="btn-flat btn-hover">
                                                 Xem sản phẩm
                                             </span>
@@ -204,92 +204,7 @@
 </section>
 <!-- End category Area -->
 <!-- start product Area -->
-<!-- @* class : owl-carousel*@ -->
 <section class="active-product-area section_gap">
-    <!-- single product slide -->
-    <div class="single-product-slider">
-        <div class="container">
-            <div class="row justify-content-center" data-aos="fade-up">
-                <div class="col-lg-6 text-center">
-                    <div class="section-title">
-                        <h1><a asp-controller="Home" asp-action="Products" class="text-decoration-none text-link-hover">Sản phẩm</a></h1>
-                        <p>Các sản phẩm mới.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row" data-aos="fade-up">
-                @foreach (var item in Model)
-                {
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-product">
-                            <a asp-action="Details" asp-route-id="@item.ProductID">
-                                <div class="img-prd-animation">
-                                    <div class="img-fluid">
-                                        <img class="" src="../root/images/Product/@item.Image" alt="" />
-                                        @if (item.Status)
-                                        {
-                                            <div class="bagde-sale badge-products-stop">
-                                                <span class="badge-txt" style="font-size: 14px;"> Ngừng kinh doanh</span>
-                                            </div>
-                                        }
-                                        else if (item.Sale > 0)
-                                        {
-                                            var sale = Math.Round((@item.Sale / @item.Price) * 100);
-                                            <div class="bagde-sale">
-                                                <span class="badge-txt">Sale @sale%</span>
-                                            </div>
-                                        }
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="product-details mt-3">
-                                <h6 class="custom-title-product">
-                                    <a class="text-decoration-none text-link-hover" data-toggle="tooltip" title="@item.ProductName" asp-action="Details" asp-route-id="@item.ProductID">
-                                        @Html.DisplayFor(modelItem => item.ProductName)
-                                    </a>
-                                </h6>
-                                <div class="price d-flex">
-                                    @if (item.Sale > 0)
-                                    {
-                                        <h6 class="d-flex">@string.Format("{0:0,0 vnđ}", (item.Price - item.Sale)) <span class="text-lowercase"></span></h6>
-                                        <h6 class="d-flex l-through">@string.Format("{0:0,0 vnđ}", item.Price) <span class="text-lowercase"></span></h6>
-                                    }
-                                    else
-                                    {
-                                        <h6 class="d-flex">@string.Format("{0:0,0 vnđ}", item.Price) <span class="text-lowercase"></span></h6>
-                                    }
-                                </div>
-                                <div class="prd-bottom">
-                                    @if (!item.Status)
-                                    {
-                                        <a class="addProduct social-info" href="javascript:addCart(@item.ProductID);">
-                                            <span class='bx bx-basket'></span>
-                                            <p class="hover-text">Giỏ hàng</p>
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a class="addProduct social-info" disabled="disabled">
-                                            <span class='bx bx-basket custom-history-bag-disable'></span>
-                                            <p class="hover-text">Giỏ hàng</p>
-                                        </a>
-                                    }
-                                    <a asp-action="Details" asp-route-id="@item.ProductID" class="social-info">
-                                        <span class='bx bx-move'></span>
-                                        <p class="hover-text">Xem Thêm</p>
-                                    </a>
-                                    <a class="social-info">
-                                        <span class='bx bx-share bx-rotate-180'></span>
-                                        <p class="hover-text">Chia sẻ</p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-
 </section>
 <!-- end product Area -->
 <!-- start features Area -->
