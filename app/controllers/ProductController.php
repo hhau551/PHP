@@ -58,7 +58,7 @@ class ProductController {
     function deleteProduct(){
         $productid = $_GET['productid'];
 
-        $isSuccess = Size::delete($productid);
+        $isSuccess = Product::delete($productid);
         if($isSuccess)        
             header('Location: ?route=danh-sach-product');
         else 

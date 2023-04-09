@@ -104,8 +104,6 @@
                     <div class="form-group">
                         <label for="ProductName" class="control-label">ProductName</label>
                         <input type="text" for="ProductName" class="form-control" id="ProductName" name="ProductName" value="<?php $product['ProductName'];?>"/>
-                        <label for="hoten">Ho Ten</label>
-                        <input type="text" class="form-control" id="hoten" value="<?php $product['ProductName'];?>" name="hoten" required>
                     </div>
                     <div class="form-group">
                         <label for="Price" class="control-label">Price</label>
